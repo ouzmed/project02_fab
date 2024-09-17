@@ -13,6 +13,59 @@
     "sourceQueryCulture": "en-US",
     "tables": [
       {
+        "name": "8a963603852749ecbe6775739a6ce07e_ec80049a_002Dd6dd_002D4987_002D8f47_002D05c0aa19287c",
+        "sourceLineageTag": "[dbo].[8a963603852749ecbe6775739a6ce07e_ec80049a_002Dd6dd_002D4987_002D8f47_002D05c0aa19287c]",
+        "columns": [
+          {
+            "name": "Column1",
+            "dataType": "string",
+            "sourceColumn": "Column1",
+            "sourceProviderType": "varchar",
+            "sourceLineageTag": "Column1",
+            "summarizeBy": "none",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          },
+          {
+            "name": "Column2",
+            "dataType": "int64",
+            "sourceColumn": "Column2",
+            "formatString": "0",
+            "sourceProviderType": "bigint",
+            "sourceLineageTag": "Column2",
+            "summarizeBy": "sum",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "{{Dataset_Name}}",
+            "mode": "directLake",
+            "source": {
+              "type": "entity",
+              "entityName": "8a963603852749ecbe6775739a6ce07e_ec80049a_002Dd6dd_002D4987_002D8f47_002D05c0aa19287c",
+              "expressionSource": "DatabaseQuery",
+              "schemaName": "dbo"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "IsTableInBiModel",
+            "value": "False"
+          }
+        ]
+      },
+      {
         "name": "d84c9b60be2d409689474b00145ba6fd_1868f648_002Db6f0_002D46b9_002Db34f_002Db103c228f62d",
         "sourceLineageTag": "[dbo].[d84c9b60be2d409689474b00145ba6fd_1868f648_002Db6f0_002D46b9_002Db34f_002Db103c228f62d]",
         "columns": [
@@ -174,7 +227,7 @@
       },
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"tbl_gold\",\"d84c9b60be2d409689474b00145ba6fd_1868f648_002Db6f0_002D46b9_002Db34f_002Db103c228f62d\"]"
+        "value": "[\"exec_requests_history\",\"long_running_queries\",\"frequently_run_queries\",\"exec_sessions_history\",\"8a963603852749ecbe6775739a6ce07e_ec80049a_002Dd6dd_002D4987_002D8f47_002D05c0aa19287c\",\"tbl_gold\",\"d84c9b60be2d409689474b00145ba6fd_1868f648_002Db6f0_002D46b9_002Db34f_002Db103c228f62d\"]"
       },
       {
         "name": "SourceLineageTagType",
