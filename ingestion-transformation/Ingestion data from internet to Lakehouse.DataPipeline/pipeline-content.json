@@ -1,0 +1,116 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "ODataSource",
+            "httpRequestTimeout": "00:05:00",
+            "datasetSettings": {
+              "type": "ODataResource",
+              "typeProperties": {
+                "path": "Customers"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "aa5a306b-2d24-4c94-9400-16ae3785e307"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "tbl_customers"
+              },
+              "schema": [],
+              "linkedService": {
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "94aaa1bf-7223-4522-860c-273eb626e6bc",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                },
+                "name": "project02_lake_db"
+              },
+              "annotations": []
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy Table Customer to Lakehouse",
+        "dependsOn": []
+      },
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "ODataSource",
+            "httpRequestTimeout": "00:05:00",
+            "datasetSettings": {
+              "type": "ODataResource",
+              "typeProperties": {
+                "path": "Orders"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "aa5a306b-2d24-4c94-9400-16ae3785e307"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "table": "tbl_orders"
+              },
+              "schema": [],
+              "linkedService": {
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "94aaa1bf-7223-4522-860c-273eb626e6bc",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                },
+                "name": "project02_lake_db"
+              },
+              "annotations": []
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy Orders table to Lakehouse",
+        "dependsOn": []
+      }
+    ]
+  }
+}
